@@ -1,0 +1,76 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  background-color: rgb(234, 249, 244);
+}
+
+#container {
+  background-color: white;
+  margin: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px hsla(162, 16%, 68%, 0.3);
+  text-align: center;
+}
+
+#checkbox {
+  display: inline-block;
+  text-align: left;
+}
+
+h1 {
+  color: rgb(110, 218, 182);
+  margin-bottom: 30px;
+}
+
+#passwordLengthLabel {
+  font-size: 1.2rem;
+  color: hsl(160, 35%, 36%);
+  font-weight: 600;
+}
+
+#passwordLength {
+  text-align: center;
+  width: 50px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: hsl(160, 33%, 25%);
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 1.2rem;
+}
+input,
+label {
+  cursor: pointer;
+}
+
+button {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: hsl(0, 0%, 0%);
+  background-color: hsl(160, 59%, 64%);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: hsl(160, 59%, 74%);
+}
+
+button:active {
+  background-color: hsl(160, 59%, 84%);
+}
+
+#answer{
+
+}

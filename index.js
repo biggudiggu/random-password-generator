@@ -1,3 +1,23 @@
+//random password generator
+
+
+const generateBtn = document.getElementById("generateBtn").addEventListener("click", function(){
+  const passwordLength = parseInt(document.getElementById("passwordLength").value);
+  const includeLowercase = document.getElementById("includeLowercase").checked;
+  const includeUppercase = document.getElementById("includeUppercase").checked;
+  const includeNumbers = document.getElementById("includeNumbers").checked;
+  const includeSymbols = document.getElementById("includeSymbols").checked;
+  
+  const password = generatePassword(passwordLength, 
+    includeLowercase, 
+    includeUppercase, 
+    includeNumbers, 
+    includeSymbols);
+
+  document.getElementById("answer").innerHTML = `Your password is:<br><br>${password}`;
+});
+
+
 function generatePassword(passwordLength, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
   const lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
   const upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -13,30 +33,18 @@ function generatePassword(passwordLength, includeLowercase, includeUppercase, in
   allowedChars += includeSymbols ? symbolChars : "";
 
   if(passwordLength <= 0){
-    return `()`;
+    return `(password length must be at least 1)`;
+  }
+  if(allowedChars.length === 0){
+    return `(at least 1 set of character must be selected)`;
   }
 
   for (let i = 0; i < passwordLength; i++) {
     const index = Math.floor(Math.random() * allowedChars.length);
     password += allowedChars[index];
   }
+  
+  answer.textContent = `your password is: ${password}`;
 
   return password;
 }
-
-
-const passwordLength = 10;
-const includeLowercase = true;
-const includeUppercase = true;
-const includeNumbers = true;
-const includeSymbols = true;
-
-
-const password = generatePassword(passwordLength, 
-                                  includeLowercase, 
-                                  includeUppercase, 
-                                  includeNumbers, 
-                                  includeSymbols);
-
-
-console.log(password);                                  
